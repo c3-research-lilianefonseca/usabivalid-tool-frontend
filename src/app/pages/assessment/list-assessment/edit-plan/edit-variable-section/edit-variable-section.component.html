@@ -1,0 +1,94 @@
+<nb-card *ngIf="dataloaded | async">
+  <nb-card-header>
+    <h4>attributes and Measurements Section</h4>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="container">
+      <div class="col-lg-12 bottom-margin">
+        <div
+          *ngFor="let parentQuestion of getCharacterizationQuestionsObject(categories.variables.acronym).parentQuestions; let i = index;">
+          <div class="col-lg-12 row">
+            <h4 class="col-lg-12 bottom-margin padding-right"><b>{{parentQuestion.title}}</b>
+              <nb-icon *ngIf="!isNullOrUndefined(parentQuestion.instruction)" [nbTooltip]="parentQuestion.instruction"
+                       class="button-space"
+                       icon="info-outline" nbButton
+                       nbTooltipPlacement="right"
+                       nbTooltipStatus="warning" status="warning" style="padding-left: 5px"></nb-icon>
+            </h4>
+          </div>
+          <div *ngFor="let question of parentQuestion.questions" class="container col-lg-12 bottom-margin"
+               style="padding-left: 10px">
+            <label class="col-lg-12"><b>{{question.title}}</b>{{question.subTitle}}</label>
+            <div *ngIf="parentQuestion.key === 'VM-4'" class="container">
+              <div *ngFor="let attribute of assessment.attributes" class="col-lg-12 bottom-margin">
+                          <textarea *ngIf="isEqual(question.objectKey, attribute.usabilityAttribute)"
+                                    [(ngModel)]="attribute.variables"
+                                    fullWidth nbInput
+                                    placeholder="Describe the attribule attributes here" rows="2" shape="round"
+                                    style="padding-left: 10px"></textarea>
+                <nb-checkbox (checkedChange)="checkUsabilityVariable($event, attribute.usabilityAttribute, parentQuestion.key)"
+                             *ngIf="isEqual(question.objectKey, attribute.usabilityAttribute)"
+                             [checked]="verifyUsabilityVariableCheck(attribute.usabilityAttribute, parentQuestion.key)"
+                             class="padding-right"
+                             status="primary" style="padding-left: 20px; padding-top: 10px">Done
+                </nb-checkbox>
+              </div>
+            </div>
+            <div *ngIf="parentQuestion.key === 'VM-5'" class="container">
+              <div *ngFor="let attribute of assessment.attributes" class="col-lg-12 bottom-margin">
+                        <textarea *ngIf="isEqual(question.objectKey, attribute.usabilityAttribute)"
+                                  [(ngModel)]="attribute.obtainedBy"
+                                  fullWidth nbInput
+                                  placeholder="Describe the methods and criteria here" rows="2" shape="round"
+                                  style="padding-left: 10px"></textarea>
+                <nb-checkbox (checkedChange)="checkUsabilityVariable($event, attribute.usabilityAttribute, parentQuestion.key)"
+                             *ngIf="isEqual(question.objectKey, attribute.usabilityAttribute)"
+                             [checked]="verifyUsabilityVariableCheck(attribute.usabilityAttribute, parentQuestion.key)"
+                             class="padding-right"
+                             status="primary" style="padding-left: 20px; padding-top: 10px">Done
+                </nb-checkbox>
+              </div>
+            </div>
+            <br>
+            <hr class="solid">
+          </div>
+          <div *ngIf="parentQuestion.key === 'VM-6'" class="container">
+            <nb-card>
+              <nb-card-body class="form-group">
+                <div *ngFor="let scale of usabilityScales;let i = index;" class="row">
+                  <nb-checkbox (checkedChange)="scaleSelectionCheckbox($event,scale,i)"
+                               [checked]="verifyScaleStatus(scale)"
+                               status="primary"
+                               style="padding-left: 20px">
+                    <nb-action [nbTooltip]="scale.description"
+                               class="button-space"
+                               nbButton
+                               nbTooltipPlacement="right" nbTooltipStatus="info" status="info">{{scale.name}} ({{scale.acronym}}
+                      )
+                    </nb-action>
+                  </nb-checkbox>
+                </div>
+                <nb-checkbox (checkedChange)="checkScalesCheckbox($event)"
+                             [checked]="verifyScalesCheckbox()"
+                             [disabled]="checkClickable()"
+                             [nbTooltipTrigger]="tooltipTrigger" class="padding-right" nbButton
+                             nbTooltip="It is necessary to choose at least one option."
+                             nbTooltipPlacement="top"
+                             nbTooltipStatus="danger"
+                             status="primary" style="padding-left: 20px; padding-top: 10px">Done
+                </nb-checkbox>
+              </nb-card-body>
+            </nb-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+  <nb-card-footer>
+    <div>
+      <button (click)="onSubmit()" class="padding-right" nbButton status="success">
+        <b>SUBMIT</b>
+      </button>
+    </div>
+  </nb-card-footer>
+</nb-card>

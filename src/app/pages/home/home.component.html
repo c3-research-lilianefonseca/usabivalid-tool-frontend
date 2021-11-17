@@ -1,0 +1,48 @@
+<div class="row">
+  <h3 class="flex-center">Home</h3>
+  <nb-card [hidden]="!isReviewer" class="fe-pulse-w-pause col-md-12 flex" style="cursor: pointer">
+    <nb-action (click)="goToReviewPlan()" fullWidth="true">
+      <nb-card-body>
+        <span>
+          <nb-icon [options]="{ animation: { type: 'pulse' } }" class="blob" icon="book-open-outline"></nb-icon>
+          <h5>Review Requests</h5>
+          <p class="light">Requests for review of assessment plans.</p>
+        </span>
+      </nb-card-body>
+    </nb-action>
+  </nb-card>
+  <nb-card class="fe-pulse-w-pause col-md-12 flex" style="cursor: pointer">
+    <nb-action (click)="goToCreate()" fullWidth="true">
+      <nb-card-body>
+        <span>
+          <nb-icon [options]="{ animation: { type: 'pulse' } }" class="blob" icon="file-add-outline"></nb-icon>
+          <h5>New Assessment Plan</h5>
+          <p class="light">Create a new usability assessment plan,add your collaborators and define its characteristics.</p>
+        </span>
+      </nb-card-body>
+    </nb-action>
+  </nb-card>
+  <nb-card (click)="goToPlans()" class="fe-pulse-w-pause col-md-12" nbButton>
+    <nb-card-body>
+      <div>
+        <nb-icon [options]="{ animation: { type: 'pulse' } }" icon="message-square-outline" size="large"></nb-icon>
+      </div>
+      <div>
+        <h5>My Assessment Plans</h5>
+        <p class="light">Fill in / edit, export and delete assessment plans that you have created. Fill in / edit if you
+          are a collaborator.</p>
+      </div>
+    </nb-card-body>
+  </nb-card>
+  <nb-card (click)="goToReviewPlan()" class="fe-pulse-w-pause col-md-12" style="cursor: pointer">
+    <nb-card-body>
+      <div>
+        <nb-icon [options]="{ animation: { type: 'pulse' } }" icon="list-outline" size="large"></nb-icon>
+      </div>
+      <div>
+        <h5>Reviewed Plans</h5>
+        <p class="light">View, download or delete the results of your plan review.</p>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>

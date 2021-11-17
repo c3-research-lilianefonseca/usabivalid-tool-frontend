@@ -1,0 +1,42 @@
+@import '../../../@theme/styles/themes';
+
+nb-card-body.example-items-col {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.bottom-margin {
+  margin-bottom: 30px;
+}
+
+.top-margin {
+  margin-top: 30px;
+}
+
+.padding-right {
+  float: right;
+}
+
+.display-next {
+  display: inline;
+}
+
+:host ::ng-deep nb-stepper .step-content {
+  text-align: center;
+
+  button {
+    cursor: pointer;
+    margin: 0.5rem;
+  }
+}
+
+.bottom-margin-light {
+  margin-bottom: 5px;
+}

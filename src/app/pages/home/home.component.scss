@@ -1,0 +1,35 @@
+.flex {
+  display: flex;
+}
+
+.flex-start {
+  align-items: flex-start;
+}
+
+.flex-center {
+  align-items: center;
+}
+
+.img {
+  max-width: 100%;
+}
+
+.flex-end {
+  align-items: flex-end;
+}
+
+nb-card:hover {
+  background-color: #1a1f33;
+}
+
+.fe-pulse-w-pause {
+  animation-name: pulse;
+}
+
+.fe-pulse-w-pause:hover,
+.fe-pulse-w-pause:focus {
+  transform: scale(1.01);
+  transition: all ease 500ms;
+}
+
+/////////////////////////////////////////////////////////////////////////
