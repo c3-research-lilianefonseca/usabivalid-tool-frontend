@@ -1,4 +1,4 @@
-import {ExtraOptions, RouterModule, Routes} from '@angular/router';
+import {ExtraOptions, PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 
 import {AdminGuard} from './guards/admin.guard';
@@ -19,12 +19,12 @@ export const routes: Routes = [
   { path: '**', redirectTo: 'pages' },
 ];
 
-const config: ExtraOptions = {
-  useHash: false,
-};
+// const config: ExtraOptions = {
+//   useHash: false,
+// };
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, config)],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, useHash: false, })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {
