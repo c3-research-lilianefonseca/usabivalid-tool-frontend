@@ -131,9 +131,18 @@ export const REVIEWER_MENU_ITEMS: NbMenuItem[] = [
   //   link: '/pages/layout/list',
   // },
   {
+    title: 'About Usabivalid',
+    icon: 'info-outline',
+    link: '/pages/about-usabivalid',
+  },
+  {
     title: 'References',
     icon: 'bookmark-outline',
     link: '/pages/references',
+  },
+  {
+    title: 'HELP',
+    group: true,
   },
   {
     title: 'Suggested Scales',

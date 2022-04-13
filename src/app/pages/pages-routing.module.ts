@@ -39,6 +39,11 @@ const routes: Routes = [{
         .then(m => m.SuggestedScalesModule),
     },
     {
+      path: 'about-usabivalid',
+      loadChildren: () => import('./about-usabivalid/about-usabivalid.module')
+        .then(m => m.AboutUsabivalidModule),
+    },
+    {
       path: '',
       redirectTo: 'home',
       pathMatch: 'full',
