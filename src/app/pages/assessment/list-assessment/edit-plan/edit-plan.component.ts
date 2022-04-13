@@ -1110,6 +1110,7 @@ export class EditPlanComponent implements OnInit {
     }
     const calculatedPercentage = +((this.questionsAnswered * 100) / questionQuantity).toFixed(1);
     this.questionsPercentage = calculatedPercentage > 100 ? 100 : calculatedPercentage;
+    return this.questionsPercentage;
   }
 
   calculatePlanPercentage() {
