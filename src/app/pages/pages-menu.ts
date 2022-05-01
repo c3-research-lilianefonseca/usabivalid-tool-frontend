@@ -153,4 +153,9 @@ export const REVIEWER_MENU_ITEMS: NbMenuItem[] = [
     title: 'TUTORIAL',
     group: true,
   },
+  {
+    title: 'tutorial',
+    icon: 'book-outline',
+    link: '/pages/tutorial',
+  },
 ];

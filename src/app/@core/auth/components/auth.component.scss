@@ -33,9 +33,9 @@
     width: 100%;
   }
 
-  pex-auth-block {
-    margin: auto;
-  }
+  // pex-auth-block {
+  //   margin: auto;
+  // }
 
   @include media-breakpoint-down(sm) {
     pex-card {
@@ -44,9 +44,10 @@
     }
   }
 
-  ::ng-deep {
+  :host ::ng-deep {
     pex-layout .layout .layout-container .content .columns pex-layout-column {
       padding: $auth-layout-padding;
+      max-height: 100vh !important;
 
       @include media-breakpoint-down(sm) {
         padding: 0;
