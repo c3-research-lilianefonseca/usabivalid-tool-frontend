@@ -1,3 +1,14 @@
+<div
+  id="container"
+  style="
+    padding: 15px 30%;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  "
+>
 <h1 class="title" id="title">Register</h1>
 
 <form (ngSubmit)="register()" [formGroup]="form" aria-labelledby="title">
@@ -137,3 +148,4 @@
 <section aria-label="Sign in" class="another-action">
   Already have an account? <a class="text-link" routerLink="../login">Log in</a>
 </section>
+</div>

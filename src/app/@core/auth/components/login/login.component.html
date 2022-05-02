@@ -1,65 +1,90 @@
-<div id="container">
-  <div>
-<h1 class="title" id="title">Usabivalid Tool</h1>
-<p style="text-align: center" class="subtitle">Usability Validation Tool - A tool capable of assisting researchers in developing usability
-  assessment plans for smart city applications.</p>
-</div>
-<h2 class="title" id="title-sing-in">Sign In</h2>
+<div
+  id="container"
+  style="
+    padding: 15px 30%;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  "
+>
+  <div class="header">
+    <h1 class="title" id="title">Usabivalid Tool</h1>
+    <p style="text-align: center;  margin-bottom: 50px" class="subtitle">
+      Usability Validation Tool - A tool capable of assisting researchers in
+      developing usability assessment plans for smart city applications.
+    </p>
 
-<form (ngSubmit)="signIn()" [formGroup]="form" aria-labelledby="title">
-
-  <div class="form-control-group">
-    <label class="label" for="input-email">Email address or username:</label>
-    <input [attr.aria-invalid]="login.invalid && login.touched ? true : null"
-           [status]="login.dirty ? (login.invalid  ? 'danger' : 'success') : 'basic'"
-           autofocus
-           formControlName="login"
-           fullWidth
-           id="input-email"
-           name="email"
-           nbInput
-           placeholder="Email address or username">
-    <ng-container *ngIf="login.invalid && login.touched">
-      <p *ngIf="login.errors?.required" class="caption status-danger">
-        Field required!
-      </p>
-    </ng-container>
+    <h2 class="title" id="title-sing-in">Sign In</h2>
   </div>
+  <form (ngSubmit)="signIn()" [formGroup]="form" aria-labelledby="title">
+    <div class="form-control-group">
+      <label class="label" for="input-email">Email address or username:</label>
+      <input
+        [attr.aria-invalid]="login.invalid && login.touched ? true : null"
+        [status]="
+          login.dirty ? (login.invalid ? 'danger' : 'success') : 'basic'
+        "
+        autofocus
+        formControlName="login"
+        fullWidth
+        id="input-email"
+        name="email"
+        nbInput
+        placeholder="Email address or username"
+      />
+      <ng-container *ngIf="login.invalid && login.touched">
+        <p *ngIf="login.errors?.required" class="caption status-danger">
+          Field required!
+        </p>
+      </ng-container>
+    </div>
 
-  <div class="form-control-group">
-    <label class="label" for="input-password">Password:</label>
-    <input [attr.aria-invalid]="password.invalid && password.touched ? true : null"
-           [status]="password.dirty ? (password.invalid  ? 'danger' : 'success') : 'basic'"
-           formControlName="password"
-           fullWidth
-           id="input-password"
-           name="password"
-           nbInput
-           placeholder="Password"
-           type="password">
-    <ng-container *ngIf="password.invalid && password.touched ">
-      <p *ngIf="password.errors?.required" class="caption status-danger">
-        Password is required!
-      </p>
-    </ng-container>
-  </div>
+    <div class="form-control-group">
+      <label class="label" for="input-password">Password:</label>
+      <input
+        [attr.aria-invalid]="password.invalid && password.touched ? true : null"
+        [status]="
+          password.dirty ? (password.invalid ? 'danger' : 'success') : 'basic'
+        "
+        formControlName="password"
+        fullWidth
+        id="input-password"
+        name="password"
+        nbInput
+        placeholder="Password"
+        type="password"
+      />
+      <ng-container *ngIf="password.invalid && password.touched">
+        <p *ngIf="password.errors?.required" class="caption status-danger">
+          Password is required!
+        </p>
+      </ng-container>
+    </div>
 
-  <div class="form-control-group accept-group">
-    <nb-checkbox *ngIf="rememberMe" formControlName="rememberMe">Remember me</nb-checkbox>
-    <a class="forgot-password" routerLink="../request-password">Forgot Password?</a>
-  </div>
+    <div class="form-control-group accept-group">
+      <nb-checkbox *ngIf="rememberMe" formControlName="rememberMe"
+        >Remember me</nb-checkbox
+      >
+      <a class="forgot-password" routerLink="../request-password"
+        >Forgot Password?</a
+      >
+    </div>
 
-  <button [disabled]="!form.valid"
-          fullWidth
-          nbButton
-          status="success"
-          type="submit"
-  >
-    Sign In
-  </button>
-</form>
+    <button
+      [disabled]="!form.valid"
+      fullWidth
+      nbButton
+      status="success"
+      type="submit"
+    >
+      Sign In
+    </button>
+  </form>
 
-<section aria-label="Register" class="another-action">
-  Do not have an account? <a class="text-link" routerLink="../register">Sign Up</a>
-</section>
+  <section aria-label="Register" class="another-action">
+    Do not have an account?
+    <a class="text-link" routerLink="../register">Sign Up</a>
+  </section>
 </div>
