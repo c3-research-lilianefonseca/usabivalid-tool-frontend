@@ -69,7 +69,7 @@
         </nb-card>
         <nb-accordion multi>
           <nb-accordion-item (click)="onClickApplication(categories.application.acronym)">
-            <nb-accordion-item-header style="background-color: #d9d9d9;color: #1a1f33">
+            <nb-accordion-item-header [ngClass]="calculateProgressPercentage(categories.application.acronym) > 99?'green-color':'not-complete'">
               {{getCharacterizationQuestionsObject(categories.application.acronym).section}}
             </nb-accordion-item-header>
             <nb-accordion-item-body>
@@ -255,7 +255,7 @@
             </nb-accordion-item-body>
           </nb-accordion-item>
           <nb-accordion-item (click)="onClickApplication(categories.goals.acronym)">
-            <nb-accordion-item-header style="background-color: #d9d9d9;color: #1a1f33">
+            <nb-accordion-item-header [ngClass]="calculateProgressPercentage(categories.goals.acronym) > 99?'green-color':'not-complete'">
               {{getCharacterizationQuestionsObject(categories.goals.acronym).section}}
             </nb-accordion-item-header>
             <nb-accordion-item-body>
@@ -317,7 +317,7 @@
             </nb-accordion-item-body>
           </nb-accordion-item>
           <nb-accordion-item (click)="onClickApplication(categories.variables.acronym)">
-            <nb-accordion-item-header style="background-color: #d9d9d9;color: #1a1f33">
+            <nb-accordion-item-header [ngClass]="calculateProgressPercentage(categories.variables.acronym) > 99?'green-color':'not-complete'">
               {{getCharacterizationQuestionsObject(categories.variables.acronym).section}}
             </nb-accordion-item-header>
             <nb-accordion-item-body>
@@ -428,7 +428,7 @@
             </nb-accordion-item-body>
           </nb-accordion-item>
           <nb-accordion-item (click)="onClickApplication(categories.participants.acronym)">
-            <nb-accordion-item-header style="background-color: #d9d9d9;color: #1a1f33">
+            <nb-accordion-item-header  [ngClass]="calculateProgressPercentage(categories.participants.acronym) > 99?'green-color':'not-complete'">
               {{getCharacterizationQuestionsObject(categories.participants.acronym).section}}
             </nb-accordion-item-header>
             <nb-accordion-item-body>
@@ -588,7 +588,7 @@
             </nb-accordion-item-body>
           </nb-accordion-item>
           <nb-accordion-item (click)="onClickApplication(categories.tasks.acronym)">
-            <nb-accordion-item-header style="background-color: #d9d9d9;color: #1a1f33">
+            <nb-accordion-item-header  [ngClass]="calculateProgressPercentage(categories.tasks.acronym) > 99?'green-color':'not-complete'">
               {{getCharacterizationQuestionsObject(categories.tasks.acronym).section}}
             </nb-accordion-item-header>
             <nb-accordion-item-body>
@@ -751,7 +751,7 @@
             </nb-accordion-item-body>
           </nb-accordion-item>
           <nb-accordion-item (click)="onClickApplication(categories.procedure.acronym)">
-            <nb-accordion-item-header style="background-color: #d9d9d9;color: #1a1f33">
+            <nb-accordion-item-header s [ngClass]="calculateProgressPercentage(categories.procedure.acronym) > 99?'green-color':'not-complete'">
               {{getCharacterizationQuestionsObject(categories.procedure.acronym).section}}
             </nb-accordion-item-header>
             <nb-accordion-item-body>
@@ -943,7 +943,7 @@
             </nb-accordion-item-body>
           </nb-accordion-item>
           <nb-accordion-item (click)="onClickApplication(categories.data.acronym)">
-            <nb-accordion-item-header style="background-color: #d9d9d9;color: #1a1f33">
+            <nb-accordion-item-header  [ngClass]="calculateProgressPercentage(categories.data.acronym) > 99?'green-color':'not-complete'">
               {{getCharacterizationQuestionsObject(categories.data.acronym).section}}
             </nb-accordion-item-header>
             <nb-accordion-item-body>
@@ -1035,7 +1035,7 @@
             </nb-accordion-item-body>
           </nb-accordion-item>
           <nb-accordion-item (click)="onClickApplication(categories.threats.acronym)">
-            <nb-accordion-item-header style="background-color: #d9d9d9;color: #1a1f33">
+            <nb-accordion-item-header  [ngClass]="calculateProgressPercentage(categories.threats.acronym) > 99?'green-color':'not-complete'">
               {{getCharacterizationQuestionsObject(categories.threats.acronym).section}}
             </nb-accordion-item-header>
             <nb-accordion-item-body>

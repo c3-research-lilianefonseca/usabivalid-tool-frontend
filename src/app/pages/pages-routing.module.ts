@@ -44,6 +44,11 @@ const routes: Routes = [{
         .then(m => m.AboutUsabivalidModule),
     },
     {
+      path: 'tutorial',
+      loadChildren: () => import('./tutorial/tutorial.module')
+        .then(m => m.TutorialModule),
+    },
+    {
       path: '',
       redirectTo: 'home',
       pathMatch: 'full',

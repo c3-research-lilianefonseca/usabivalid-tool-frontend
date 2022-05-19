@@ -149,4 +149,13 @@ export const REVIEWER_MENU_ITEMS: NbMenuItem[] = [
     icon: 'bar-chart-outline',
     link: '/pages/suggested-scales',
   },
+  {
+    title: 'TUTORIAL',
+    group: true,
+  },
+  {
+    title: 'tutorial',
+    icon: 'book-outline',
+    link: '/pages/tutorial',
+  },
 ];
